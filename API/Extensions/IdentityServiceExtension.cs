@@ -6,7 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace API.Extensions {
     public static class IdentityServiceExtension {
-        public static IServiceCollection AddIdentityServices (this IServiceCollection services, IConfiguration config) {
+        public static void AddIdentityServices (this IServiceCollection services, IConfiguration config) {
 
             // Authentication 
             services.AddAuthentication (JwtBearerDefaults.AuthenticationScheme)
@@ -18,8 +18,6 @@ namespace API.Extensions {
                     ValidateAudience = false
                     };
                 });
-
-            return services;
         }
     }
 }
